@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-before_action :find_post, only: [:show, :edit, :update]
+before_action :find_post, only: [:edit, :update]
 
 	def index
 		@posts=Post.all		
@@ -38,6 +38,7 @@ before_action :find_post, only: [:show, :edit, :update]
 		else
 			render :edit
 			flash[:alert] = "업뎃실패"
+		end
 	end
 
 	def destroy

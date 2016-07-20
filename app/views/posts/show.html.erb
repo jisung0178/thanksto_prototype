@@ -1,0 +1,179 @@
+<div class="row">
+	<div class="jumbotron text-center">
+	  <h1>전소미에게 도미노피자 200판!</h1>
+	  <p>'인기 드라마A' 촬영장 도미노피자 스텝포함 200인분 프로젝트!</p>
+	</div>
+	<hr><br>
+
+	<div class="col-md-8">
+		<div class="main">
+			<iframe width="620" height="465" src="https://www.youtube.com/embed/aqW-H76WuHg" frameborder="0" allowfullscreen></iframe>
+		</div><!--main end-->
+		
+		<br>
+
+		<div class="sns row">
+			<div class="col-md-2 text-center">
+				<span class="text-danger h3 shared-count">300</span><br>
+				<span class="count">공유횟수</span>
+			</div>
+			<a class="btn btn-primary facebook">페이스북 좋아요</a>
+		</div><!--sns end-->
+		
+		<hr>
+		<br>
+
+		<div class="content">
+			<h2>전소미 드라마촬영 도미노피자 200인분 프로젝트!</h2><br>
+			<p>
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <u>quis nostrud exercitation</u> ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+			</p>
+			<br>
+
+			<%=image_tag("ioi_somi_dominos.jpg", width: "100%", height: "auto")%>
+			<sub>전소미, 피자먹방중</sub>
+			
+			<br><br>
+			
+			<p>
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <u>quis nostrud exercitation</u> ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+			</p>
+
+			<br><hr>
+
+			<h2>후원제품 소개</h2><br>
+
+			<div>
+				<%(1..5).each do |f|%>
+					<%=image_tag("event_kingprawn_0#{f}.jpg", width: "100%", height: "auto", alt: "Edit Entry")%>
+				<%end%>
+			</div>
+			
+			<br>
+			
+			<p>
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+			</p>
+
+			<br>
+
+			<div class="well">
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			</div>	
+
+
+		</div><!--content end-->
+		
+		
+	</div>
+
+<!--사이드바-->
+
+
+	<div class="col-md-4 sidebar">
+	
+		<dl>
+			<dt class="project-person">목표 20,000명 중 13,600명 모임</dt>
+			<div class="progress project-bar">
+				<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 68%">
+			    <span style="width: 68%"></span>
+				</div>
+			</div>	
+
+			<dd><span class="project-percent">68%</span></dd>
+
+
+			<dt>남은시간</dt>
+			<dd><span>17일</span></dd>
+		</dl>
+		<a class="btn btn-danger btn-lg" id="project-submit">
+			프로젝트 후원하기 <i class="fa fa-chevron-right" aria-hidden="true"></i>
+		</a>
+
+		<hr>
+		<p>공유 및 좋아요 취소 시 후원이 취소되며,<br> 포인트가 반환됩니다.</p>
+		<hr>
+		
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">프로젝트 후원업체</div>
+		  <div class="panel-body">
+		    
+				<div class="media">
+				  <div class="media-left">
+				    <a href="#">
+				      <%=image_tag("logo_company_dominos", width: "100", height: "auto", alt: "Edit Entry")%>
+				    </a>
+				  </div>
+				  <div class="media-body">
+				    <h4 class="media-heading">도미노피자 코리아</h4>
+				    <span>도미노피자는 미국의 피자 배달 전문 브랜드이다. 현재, 전 세계 70개국, 1만개 이상의 점포를 두고 있다.</span>
+				  </div>
+				</div>
+
+		  </div>
+
+		  <div class="panel-footer">
+		  	후원업체 자세히보기
+		  </div>
+		</div>
+
+		<ul>
+			<li>
+				<div class="panel panel-default">
+					<div class="panel-heading">적립가능한 포인트</div>
+					<div class="panel-body">
+						<div class="cpv"><i class="glyphicon fa fa-square-o"></i> &nbsp; 영상광고시청 5 point </div>
+						<div class="cpl"><i class="glyphicon fa fa-square-o"></i> &nbsp; 페이스북 좋아요 5 point </div>
+					</div>
+					<div class="panel-footer">좋아요 취소 시 포인트가 반환됩니다.</div>
+				</div>
+			</li>
+		</ul>
+	</div><!--sidebar end-->
+
+
+</div>
+
+
+
+
+
+<script>
+
+$('.facebook').click(function(){
+  $('.facebook').html('페이스북 좋아요 완료').addClass('facebook-shared');
+  $('.shared-count').text('20K')
+  $('.cpl>i').removeClass('fa-square-o').addClass('fa-check-square-o')
+  $('.cpl').addClass('del').css('color','#ff387c')
+});
+
+$('#project-submit').click(function(){
+
+if ( $('.facebook').hasClass('facebook-shared') ) {
+	$('#project-submit').html('프로젝트 후원완료 <i class="fa fa-check" aria-hidden="true"></i>').addClass('stone');
+  $('.project-percent').text('100%');
+  $('.project-person').text('목표 20,000명 중 20,000명 모임');
+  $('.project-bar').children().css('width','100%');
+  $('.project-bar>div').removeClass('progress-bar-danger').addClass('progress-bar-info');
+} else {
+	alert( "페이스북 좋아요 후에 무료후원이 가능합니다." );
+}
+  
+});
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,12 +15,18 @@ ActiveRecord::Schema.define(version: 20160719085501) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
+    t.string   "subtitle"
     t.string   "link"
-    t.text     "description"
+    t.text     "description_first"
+    t.text     "description_second"
+    t.text     "description_third"
     t.integer  "fans"
+    t.string   "brand"
+    t.string   "sub_first"
+    t.string   "sub_second"
     t.datetime "end_date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
 end

@@ -1,0 +1,261 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+
+/*
+- 가능한 scss문법으로 작성한다.
+- {}작성에 주의한다.
+- tap space는 2칸이다.
+*/
+
+/*COMMON*/
+
+body {
+	font-family: 'Noto Sans', sans-serif;
+	color: #444;
+	font-size: 16px;
+}
+
+ul{
+	list-style: none;
+    padding: 0;
+}
+
+u{
+	background-color: transparent;
+    text-decoration: none;
+    border-bottom: 1px solid #fee0df;
+    box-shadow: 0 -6px 0 #fee0df inset;
+    color: inherit;
+}
+
+.progress{
+	height: 10px;
+	margin-bottom: 0;
+}
+.progress-bar-danger{background-color: #ff2576;}
+.progress-bar-striped{
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.text-danger{color: #ff387c;}
+
+.btn-primary{
+	background-color: #5f82d7;
+	border-color: #5f82d7;
+}
+.btn-danger{
+	background-color: #ff387c;
+	border-color: #ff387c;
+}
+
+.well{
+	background-color: #fff;
+	font-size: 0.8em;
+	color: #666;
+}
+
+.caret{
+	 margin-left: 5px;
+}
+
+.form-control{
+	border:1px solid #ddd;
+	box-shadow: none;
+}
+.form-control:focus{
+	border-color: #adadad;
+	box-shadow: none;	
+}
+
+/* NAVBAR */
+/* shared/navbar */
+.navbar{
+	margin-bottom: 0;
+}
+.navbar-default {
+	background-color: #fff;
+	height: 70px;
+	border:0;
+
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.navbar-default .navbar-nav {
+	background-color: #fff;
+	text-align: center;
+	li a{
+		line-height: 35px;
+		color: #a9a9a9;
+	}
+
+	li.active {
+		a{
+			background-color: transparent;
+			color:#000;
+		}
+		a:hover{background-color: transparent;}
+		a:focus{background-color: transparent;}
+	}
+
+	li.open{
+		a{
+			background-color: transparent;
+			color:#000;
+		}
+		a:hover{background-color: transparent;}
+		a:focus{background-color: transparent;}
+	}
+}
+
+
+
+/* SHOW */
+/* posts/show */
+
+.jumbotron{
+	background-color: #fff;
+
+	h1{
+	font-size: 2.75em;
+	font-weight: 700;
+	}
+}
+.sns{ 
+	span.count{
+		font-size: 0.8em;
+		font-weight: 500;
+		color: #777;
+	}
+
+}
+
+.content{
+	font-size: 1.1em;
+	line-height: 1.85;
+	color: #777;
+
+	h2{
+		color: #444;
+	}
+}
+
+
+.sidebar{
+	color: #666;
+	
+	.btn.btn-danger.stone{
+		background-color: #00bcd4;
+		border-color: #00bcd4;
+	}
+	dl{color: #aaa;
+		dt{
+			font-size: 1em;
+		}
+
+		dd{
+			margin-bottom: 13px;
+			span{
+			font-size: 2.75em;
+			color: #000;
+			}
+		}
+	}
+	p{
+		font-size: 13px;
+	}
+	
+	.panel{ 
+		border-top: 4px solid #ff387c;
+		border-bottom: 2px solid #DDD !important;
+
+		.panel-heading{
+			background-color: transparent;
+			border:0;
+			color: #ff387c;
+			font-size: 0.75em;
+		}
+		.panel-body{
+			font-size: 0.9em;;
+			.media{
+				img.media-object{
+					width: 70px;
+					height: auto;
+				}
+				.media-left{vertical-align: middle;}
+				.media-heading{font-size: 1em;}
+				span{
+					font-size: 0.75em;
+				}
+			}
+
+			i.glyphicon{color: #ff387c;}
+		}
+		.panel-footer{
+			background-color: transparent;
+			font-size: 0.85em;
+			color: #ff387c;
+		}
+	}.panel-danger{
+		border: 1px solid #ddd;
+		background-color: #ebeae5;
+	}
+}
+
+
+
+
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    border:1px solid #ddd;
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+.btn-file:hover {
+	color: #ff387c;
+	background-color: #fff;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.btn-file>.image_input{
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
