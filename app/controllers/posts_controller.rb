@@ -1,12 +1,21 @@
 class PostsController < ApplicationController
-before_action :find_post, only: [:edit, :update]
+before_action :find_post, only: [:show, :edit, :update]
+before_action :authenticate_user!, except: [:index, :rewarding, :show]
 
 	def index
 		@posts=Post.all		
 	end
+#진행중인 후원
+	def rewarding
+		@posts=Post.all
+	end
+#진행중인 후원끝
 
 	def show
-		@post= Post.new
+		@photos = @post.photos
+		
+		#좋아요 누른사람만 감지해서 댓글을 달수있게 추가
+		@comments = @post.comments
 	end
 
 	def new
@@ -20,8 +29,13 @@ before_action :find_post, only: [:edit, :update]
 		@post= Post.new(post_params)
 
 		if @post.save
-			redirect_to @post
-			flash[:alert] = "저장성공"
+			if params[:images]
+				params[:images].each do |image|
+					@post.photos.create(image: image)
+				end
+			end
+			@photos = @post.photos
+			redirect_to @post, notices: "저장성공"
 		else
 			render :new
 			flash[:alert] = "저장실패"
@@ -32,17 +46,22 @@ before_action :find_post, only: [:edit, :update]
 	end
 
 	def update
-		if @post.update
-			redirect_to @post
-			flash[:alert] = "업뎃성공"
+		if @post.update(post_params)
+			if params[:images]
+				params[:images].each do |image|
+					@post.photos.create(image: image)
+				end
+			end
+
+			redirect_to @post, notices: "업뎃성공"
 		else
 			render :edit
 			flash[:alert] = "업뎃실패"
 		end
+
 	end
 
-	def destroy
-		
+	def destroy	
 	end
 
 #관리자권한 끝
@@ -53,7 +72,7 @@ before_action :find_post, only: [:edit, :update]
 	end
 
 	def post_params
-		params.require(:post).permit(:title, :link, :description, :fans, :end_date)
+		params.require(:post).permit(:title, :subtitle, :link, :description_first, :description_second, :description_third, :fans, :brand, :sub_first, :sub_second, :end_date)
 	end
 end
 

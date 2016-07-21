@@ -2,6 +2,8 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "social-share-button";
+
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans);
 
 /*
@@ -10,12 +12,21 @@
 - tap space는 2칸이다.
 */
 
+/*thanks to special COMMON*/
+.bgc-yellow{
+	background-color: #ffeb00;
+	color:#111;
+}
+.pop-up{padding: 30px;}
+
+
 /*COMMON*/
 
 body {
 	font-family: 'Noto Sans', sans-serif;
 	color: #444;
 	font-size: 16px;
+	background-color: #fbfbfb;
 }
 
 ul{
@@ -31,16 +42,17 @@ u{
     color: inherit;
 }
 
-.progress{
-	height: 10px;
-	margin-bottom: 0;
-}
-.progress-bar-danger{background-color: #ff2576;}
-.progress-bar-striped{
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 75%, transparent);
-  background-size: 40px 40px;
-}
+.h1,.h2,.h3,.h4,.h5,.h6{margin-top: 5px; margin-bottom: 5px;}
 .text-danger{color: #ff387c;}
+
+.form-control{
+	border:1px solid #ddd;
+	box-shadow: none;
+}
+.form-control:focus{
+	border-color: #adadad;
+	box-shadow: none;	
+}
 
 .btn-primary{
 	background-color: #5f82d7;
@@ -51,24 +63,31 @@ u{
 	border-color: #ff387c;
 }
 
+.panel-body{font-size: 0.9em;}
+.media-body{vertical-align: middle;}
+
+
+.progress{
+	height: 10px;
+	margin-bottom: 0;
+}
+.progress-bar-danger{background-color: #ff2576;}
+.progress-bar-striped{
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+
 .well{
 	background-color: #fff;
 	font-size: 0.8em;
 	color: #666;
 }
-
+.thumbnail{margin-bottom: 0;}
 .caret{
 	 margin-left: 5px;
 }
 
-.form-control{
-	border:1px solid #ddd;
-	box-shadow: none;
-}
-.form-control:focus{
-	border-color: #adadad;
-	box-shadow: none;	
-}
+
 
 /* NAVBAR */
 /* shared/navbar */
@@ -111,7 +130,19 @@ u{
 	}
 }
 
+#footer{
+	
+	position: static;
+    bottom: 0;
 
+	background-color: #fff;
+	width: 100%;
+	
+	margin-top: 30px;
+	padding: 50px;
+	border-top: 1px solid #ff387c;
+
+}
 
 /* SHOW */
 /* posts/show */
@@ -179,7 +210,6 @@ u{
 			font-size: 0.75em;
 		}
 		.panel-body{
-			font-size: 0.9em;;
 			.media{
 				img.media-object{
 					width: 70px;
@@ -249,13 +279,26 @@ u{
 }
 
 
+/*Idols Index*/
+/* idols/index */
 
 
 
+.btn-idol-like{
+	border:1px solid #ddd;
+	background-color: #fff;
+	color: #000;
+	padding: 6px 12px;
+	display: inline-block;
+}
 
 
+.panel-heading.preview{
+  padding: 0;
+}
 
-
-
+.panel-heading.preview img{
+  width: 100%;
+}
 
 

@@ -10,6 +10,7 @@ gem 'devise', '~> 4.2'
 gem 'omniauth', '~> 1.3', '>= 1.3.1'
 gem 'omniauth-facebook', '~> 3.0'
 
+gem 'social-share-button'
 
 
 

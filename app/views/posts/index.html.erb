@@ -1,1 +1,52 @@
-이것이 인덱
+<%if !user_signed_in?%>
+  <div class="container-fluid bgc-yellow text-center pop-up">
+    페이스북으로 3초만에 가입하고, <strong>무료로 후원하자!</strong> &nbsp;
+    <%= link_to "페이스북으로 가입", user_facebook_omniauth_authorize_path, class: "btn btn-primary"%>
+    <%= link_to "로그인", new_user_session_path, class: "btn btn-danger"%>
+  </div>
+<%end%>
+
+<div class="container_fluid">
+	
+</div>
+
+<div class="container">
+<div id="idol_index" style="margin-top: 30px;">
+
+	<div class="row text-center">
+	
+	<% @posts.each do |post|%>
+	
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading preview" style="border-bottom: 0;">
+					<%=link_to post do %>
+						<%=image_tag post.photos[0].image.url()%>
+					<%end%>
+				</div>
+				<div class="progress project-bar" style="border-radius: 0;">
+					<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 68%">
+				    <span style="width: 68%"></span>
+					</div>
+				</div>
+
+				<div class="panel-body">
+					<div class="h4"><%=post.title%></div>
+					<div class="h3">68% 달성</div>
+					<%=link_to post, class:"btn btn-block btn-idol-like" do%>
+						<i class="fa fa-heart-o"></i>&nbsp;후원하기
+					<%end%>
+				</div>
+			</div>
+		</div>
+	
+	<%end%>
+	
+	</div>
+<br>	
+<hr>
+<br>
+
+	
+</div>
+</div>

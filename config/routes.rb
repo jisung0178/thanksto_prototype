@@ -3,6 +3,19 @@ Rails.application.routes.draw do
   resources :posts
   root 'posts#index'
 
+  get 'rewarding' => 'posts#rewarding'
+  get 'idols' => 'idols#index'
+
+  devise_for  :users, 
+              :path => '', 
+              :path_names => {:sign_in => 'login', :sign_out => 'logout', :edit => 'profile'},
+              :controllers => {:omniauth_callbacks => 'omniauth_callbacks'}
+
+  resources :users, only: [:show]
+
+  resources :posts do
+		resources :comments, only: [:create, :destroy]
+	end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

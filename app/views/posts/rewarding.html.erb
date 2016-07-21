@@ -1,0 +1,32 @@
+<div class="container">
+<div id="idol_index" style="margin-top: 50px;">
+
+	<div class="row text-center">
+	
+	<% @posts.each do |post|%>
+	
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading preview">
+					<%=image_tag post.photos[0].image.url(:medium)%>
+				</div>
+				<div class="panel-body">
+					<div class="h5"><%=post.title%></div>
+					<div class="h4">68%</div>
+					<%=link_to post, class:"btn btn-block btn-idol-like" do%>
+						<i class="fa fa-heart-o"></i>&nbsp;후원하기
+					<%end%>
+				</div>
+			</div>
+		</div>
+	
+	<%end%>
+	
+	</div>
+<br>	
+<hr>
+<br>
+
+	
+</div>
+</div><!--container-->
