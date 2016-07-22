@@ -1,4 +1,4 @@
-<div class="container">
+<div  id="test" class="container">
 <!--관리자 권한-->
 <div class="row text-center" style="background-color: #ffeb00; padding:25px; margin-bottom: 30px; margin-top: 30px;">
 	<%=link_to edit_post_path(@post), class: "btn btn-danger btn-lg" do%>
@@ -37,6 +37,21 @@
 
 		<hr>
 		<br>
+
+		<div id="comments">
+			<div class="show-comments">
+				<%@comments.each do |comment|%>
+					<%=comment.contents%>
+				<%end%>
+			</div>
+			<%if current_user%>
+			<div class="write-comments">
+				<%=render 'comments/form'%>
+			</div>
+			<%end%>
+		</div>
+
+		<hr><br>
 
 		<div class="content">
 			<h2><u><%=@post.title%></u></h2><br>
@@ -195,4 +210,17 @@ if ( $('.facebook').hasClass('facebook-shared') ) {
   js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.7&appId=1214638098569087";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script>
+
+
+$(window).scroll(function() {
+    if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+        alert('내용 다~읽으셨슴돠~');
+    }
+})
+
+
+
 </script>
