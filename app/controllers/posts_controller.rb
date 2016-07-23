@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-before_action :find_post, only: [:show, :edit, :update]
+before_action :find_post, only: [:show, :edit, :update, :upvote, :downvote]
 before_action :authenticate_user!, except: [:index, :rewarding, :show]
 
 	def index
@@ -16,6 +16,10 @@ before_action :authenticate_user!, except: [:index, :rewarding, :show]
 		
 		#좋아요 누른사람만 감지해서 댓글을 달수있게 추가
 		@comments = @post.comments
+		@fans = @post.fans
+		@count = @post.get_upvotes.size
+
+		@percents = @count*100/@fans
 	end
 
 	def new
@@ -60,6 +64,17 @@ before_action :authenticate_user!, except: [:index, :rewarding, :show]
 		end
 
 	end
+
+  def upvote
+    @post.upvote_by current_user
+    redirect_to :back
+  end
+  
+   
+  def downvote
+    @post.downvote_by current_user
+    redirect_to :back
+  end
 
 	def destroy	
 	end

@@ -18,6 +18,9 @@ gem 'omniauth-facebook', '~> 3.0'
 #페북공유
 gem 'social-share-button'
 
+#후원하기
+gem 'acts_as_votable', '~> 0.10.0'
+
 
 gem 'rails', '4.2.6'
 gem 'sqlite3'

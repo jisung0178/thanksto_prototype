@@ -103,26 +103,36 @@
 		
 	</div>
 
-<!--사이드바-->
-
+<!-- 사이드바-->
+<!-------------------->
 
 	<div class="col-md-4 sidebar">
 	
 		<dl>
-			<dt class="project-person">목표 <%=@post.fans%>명 중 13,600명 모임</dt>
+			<dt class="project-person">목표 <%=@fans%>명 중 <%=@count%>명 모임</dt>
 			<div class="progress project-bar">
-				<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 68%">
-			    <span style="width: 68%"></span>
+				<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <%=@percents%>%">
+			    <span style="width: <%=@percents%>%"></span>
 				</div>
 			</div>	
-
-			<dd><span class="project-percent">68%</span></dd>
-
+			<dd><span class="project-percent">
+				<%if @percents < 1%>
+				약 1%
+				<%else%>
+				<%=@percents%> %
+				<%end%>
+			</span></dd>
 
 			<dt>남은시간</dt>
 			<dd><span>17일</span></dd>
 		</dl>
 		<a class="btn btn-danger btn-lg" id="project-submit">
+			프로젝트 후원하기 <i class="fa fa-chevron-right" aria-hidden="true"></i>
+		</a>
+		
+		<hr>
+<!--에이젝스 적용하자-->
+		<a class="btn btn-danger btn-lg" id="project-submit" href="<%=like_post_path(@post)%>">
 			프로젝트 후원하기 <i class="fa fa-chevron-right" aria-hidden="true"></i>
 		</a>
 
